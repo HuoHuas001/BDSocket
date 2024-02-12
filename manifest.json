@@ -1,11 +1,10 @@
 {
-    "$schema": "./manifest_schema.json",
     "manifest_version": 4,
     "type": "extension",
     "name": "BDSocket Adapter",
-    "slug": "BDSocket_Adapter",
+    "slug": "bdsocket",
     "description": "BDSocket Adapter",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "icon": "./icon.png",
     "authors": [
         {
@@ -24,11 +23,11 @@
         "preload": "./src/preload.js"
     },
     "repository": {
-        "repo": "LiteLoaderQQNT/Plugin-Template",
+        "repo": "sparkbridge/LiteLoaderQQNT-BDSocket-Adapter",
         "branch": "main",
         "release": {
-            "tag": "0.1.0",
-            "file": "Plugin-Template.zip"
+            "tag": "0.0.1",
+            "file": "plugin.zip"
         }
     }
 }

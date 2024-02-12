@@ -1,0 +1,31 @@
+<div class="wrap" id="bdsocket">
+    <div class="vertical-list-item" @click="activeServer = !activeServer">
+        <div>
+            <h2>启用WebSocket Server端</h2>
+            <span class="secondary-text">该功能修改后必须重启才会生效</span>
+        </div>
+        <div class="switchBackgroundImage q-switch" :class="{ 'is-active': activeServer }">
+            <span class="q-switch__handle"></span>
+        </div>
+    </div>
+    <div v-if="activeServer">
+        <div class="column-list-item">
+            <div class="vertical-list-item">
+                地址:<input class="translate-input" type="text" spellcheck="false" v-model="address" placeholder="地址（Address）">
+                端口:<input class="translate-input" type="text" spellcheck="false" v-model="port" placeholder="端口（Port）">
+            </div>
+        </div>
+    </div>
+    <hr class="horizontal-dividing-line">
+    <div>
+        <div>
+            <h2>WebSocket Server密钥</h2>
+            <span class="secondary-text">请务必保证密钥与客户端保持一致，否则将无法建立连接</span>
+        </div>
+        <div class="column-list-item">
+            <input class="translate-input" type="password" spellcheck="false" v-model="ws_key"
+                placeholder="Websocket Key">
+        </div>
+    </div>
+</div>
+<h1 class="version" id="bdsocket_version">当前版本<a class="link">v{{ version }}</a></h1>
