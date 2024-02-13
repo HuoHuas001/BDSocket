@@ -5,6 +5,7 @@ const {
     watch
 } = await import('../resource/cdnjs.cloudflare.com_ajax_libs_vue_3.3.4_vue.esm-browser.prod.min.js');
 
+
 const slug = "bdsocket";
 async function setSettings(content) {
     await bdsocket.setSettings(JSON.stringify(content, null, 4));
@@ -34,12 +35,14 @@ async function setting_vue(node) {
                     const setting_obj = reactive(setting_data.setting)
                     watch(setting_obj, (newValue, oldValue) => {
                         setting_data.setting = newValue;
-                        if(!isValidPort(setting_data.setting.port)){
-                            setting_data.setting.port = 0;
-                            
-                        }else{
-                            setting_data.setting.port = Number(setting_data.setting.port)
-                        }
+                        if(setting_data.setting.port != ''){
+                            if(!isValidPort(setting_data.setting.port)){
+                                setting_data.setting.port = 0;
+                                
+                            }else{
+                                setting_data.setting.port = Number(setting_data.setting.port)
+                            }
+                        }       
                         setSettings(setting_data);
                     })
                     return setting_obj
