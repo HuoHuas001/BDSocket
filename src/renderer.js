@@ -19,7 +19,6 @@ function LogError(...args) {
 }
 
 
-
 async function onSettingWindowCreated(view) {
     LogInfo("Settings Panel Open.")
     const html_file_path = `local:///${plugin_path}/src/resource/settings.html`;
